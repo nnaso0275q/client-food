@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -22,9 +23,11 @@ export const Header = () => {
 
             {/* sign up | log in */}
             <div className="gap-[12px] flex items-center w-41">
-              <Button className="w-[75px] h-[36px] bg-white text-black rounded-full ">
-                Sign up
-              </Button>
+              <Link href="/sign">
+                <Button className="w-[75px] h-[36px] bg-white text-black rounded-full ">
+                  Sign up
+                </Button>
+              </Link>
               <Button className="w-[75px] h-[36px] bg-red-500 text-white rounded-full">
                 Log in
               </Button>

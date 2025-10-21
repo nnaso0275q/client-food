@@ -1,3 +1,13 @@
+import { FoodMenu } from "./_components/FoodMenu";
+import { Footer } from "./_components/Footer";
+import { Header } from "./_components/Header";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <Header />
+      <FoodMenu />
+      <Footer />
+    </div>
+  );
 }

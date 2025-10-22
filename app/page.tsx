@@ -1,6 +1,6 @@
-import { FoodMenu } from "./_components/FoodMenu";
-import { Footer } from "./_components/Footer";
-import { Header } from "./_components/Header";
+import { FoodMenu } from "./_components/clientSections/FoodMenu";
+import { Footer } from "./_components/clientSections/Footer";
+import { Header } from "./_components/clientSections/Header";
 
 export default function Home() {
   return (

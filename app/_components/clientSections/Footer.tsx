@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export const Footer = () => {
@@ -15,7 +16,8 @@ export const Footer = () => {
 
         <div className="mx-[88px] h-[56px] mt-[76px] flex justify-between">
           <div className="w-41 h-11 gap-2">
-            <img src="/Logo.svg" />
+            {/* <img src="/Logo.svg" /> */}
+            <Image src="/Logo.svg" alt="Logo" width="46" height="37"></Image>
             <div>
               <div className="text-white font-semibold text-lg ">
                 Nom<span className="text-red-500">Nom</span>
@@ -63,8 +65,20 @@ export const Footer = () => {
           <div className="ml-[112px]">
             <div className="text-muted-foreground">FOLLOW US</div>
             <div className="mt-4 gap-4 flex items-center">
-              <img src="/fbook.svg" />
-              <img src="/insta.svg" />
+              {/* <img src="/fbook.svg" /> */}
+              <Image
+                src="/fbook.svg"
+                alt="fbook"
+                width="28"
+                height="28"
+              ></Image>
+              <Image
+                src="/insta.svg"
+                alt="insta"
+                width="28"
+                height="28"
+              ></Image>
+              {/* <img src="/insta.svg" /> */}
             </div>
           </div>
           {/* FOLLOW US */}

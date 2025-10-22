@@ -1,8 +1,20 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { useState } from "react";
 
-export default function SignStep1() {
+export default function SignStep1({ onNext }: { onNext: () => void }) {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = () => {
+    if (!email.includes("@")) {
+      alert("Email buruu baina!");
+      return;
+    }
+    onNext();
+  };
+
   return (
     <div className="w-full h-full bg-white">
       <div className=" flex gap-[48px] items-center mr-[20px] ml-[100px] min-h-screen">
@@ -23,11 +35,19 @@ export default function SignStep1() {
             type="email"
             className="w-full"
             placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           ></Input>
-          <Button className="w-full">Let's Go</Button>
-          <div className="text-muted-foreground w-full mx-[80px]">
+
+          <Button onClick={handleSubmit} className="w-full">
+            Let's Go
+          </Button>
+
+          <div className="text-muted-foreground w-full mx-[80px] gap-2">
             Already have an account?
-            <span className="text-blue-500"> Log in</span>
+            <button className="text-blue-500 hover:underline">
+              <Link href="/login"> Log in</Link>
+            </button>
           </div>
         </div>
         <img className="rounded-[16px]" src="picture.svg" />

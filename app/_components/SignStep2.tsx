@@ -24,6 +24,16 @@ export default function SignStep2({ onBack }: { onBack: () => void }) {
       alert("Amjilttai burtgegdlee");
     }
   };
+  fetch("http://localhost:8000/api/signup"),
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify({
+        password,
+      }),
+    };
 
   return (
     <div className="w-full h-full bg-white">

@@ -23,6 +23,17 @@ export default function LoginStep2({ onBack }: { onBack: () => void }) {
       setError("");
       alert("Amjilttai burtgegdlee");
     }
+    // fetch("http://localhost:8000/api/register"),
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "Application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email,
+    //       password,
+    //     }),
+    //   };
   };
 
   return (

@@ -14,6 +14,16 @@ export default function SignStep1({ onNext }: { onNext: () => void }) {
     }
     onNext();
   };
+  fetch("http://localhost:8000/api/signup"),
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    };
 
   return (
     <div className="w-full h-full bg-white">

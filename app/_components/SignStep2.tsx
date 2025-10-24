@@ -2,12 +2,18 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-export default function SignStep2({ onBack }: { onBack: () => void }) {
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
+export default function SignStep2({
+  onBack,
+  email,
+}: {
+  onBack: () => void;
+  email: string;
+}) {
+  const [password, setPassword] = useState<string>("");
+  const [confirm, setConfirm] = useState<string>("");
   const [error, setError] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!password || !confirm) {
       setError("Password bolon Confirm hoyroo buglunu uu!!!");
       return;
@@ -21,19 +27,20 @@ export default function SignStep2({ onBack }: { onBack: () => void }) {
       setError("Nuuts ug taarahgui baina");
     } else {
       setError("");
-      alert("Amjilttai burtgegdlee");
+      // alert("Amjilttai burtgegdlee");
     }
-  };
-  fetch("http://localhost:8000/api/signup"),
-    {
+
+    await fetch("http://localhost:8000/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify({
+        email,
         password,
       }),
-    };
+    });
+  };
 
   return (
     <div className="w-full h-full bg-white">

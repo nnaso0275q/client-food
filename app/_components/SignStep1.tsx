@@ -2,28 +2,23 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { useState } from "react";
 
-export default function SignStep1({ onNext }: { onNext: () => void }) {
-  const [email, setEmail] = useState("");
-
+export default function SignStep1({
+  onNext,
+  email,
+  setEmail,
+}: {
+  onNext: () => void;
+  email: string;
+  setEmail: (v: string) => void;
+}) {
   const handleSubmit = () => {
     if (!email.includes("@")) {
       alert("Email buruu baina!");
-      return;
+      return setEmail;
     }
     onNext();
   };
-  fetch("http://localhost:8000/api/signup"),
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify({
-        email,
-      }),
-    };
 
   return (
     <div className="w-full h-full bg-white">
